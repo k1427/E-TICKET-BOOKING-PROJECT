@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Responsive Halloween E-Commerce Website Design</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/trainstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+body {
+    background-color: #EDEDED;
+  }
+  .circular-menu {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+  }
+  
+  .circular-menu .floating-btn {
+    display: block;
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+    background-color: hsl(4, 98%, 60%);
+    box-shadow: 0 2px 5px 0 hsla(0, 0%, 0%, .26);  
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    line-height: 3.9;
+    cursor: pointer;
+    outline: 0;
+  }
+  
+  .circular-menu.active .floating-btn {
+    box-shadow: inset 0 0 3px hsla(0, 0%, 0%, .3);
+  }
+  
+  .circular-menu .floating-btn:active {
+    box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, .4);
+  }
+  
+  .circular-menu .floating-btn i {
+    font-size: 1.3em;
+    transition: transform .2s;  
+  }
+  
+  .circular-menu.active .floating-btn i {
+    transform: rotate(-45deg);
+  }
+  
+  .circular-menu:after {
+    display: block;
+    content: ' ';
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -2;
+    background-color: hsl(4, 98%, 60%);
+    transition: all .3s ease;
+  }
+  
+  .circular-menu.active:after {
+    transform: scale3d(5.5, 5.5, 1);
+    transition-timing-function: cubic-bezier(.68, 1.55, .265, 1);
+  }
+  
+  .circular-menu .items-wrapper {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .circular-menu .menu-item {
+    position: absolute;
+    top: .2em;
+    right: .2em;
+    z-index: -1;
+    display: block;
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+    font-size: 1em;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 3;
+    background-color: hsla(0,0%,0%,.1);
+    transition: transform .3s ease, background .2s ease;
+  }
+  
+  .circular-menu .menu-item:hover {
+    background-color: hsla(0,0%,0%,.3);
+  }
+  
+  .circular-menu.active .menu-item {
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .circular-menu.active .menu-item:nth-child(1) {
+    transform: translate3d(1em,-7em,0);
+  }
+  
+  .circular-menu.active .menu-item:nth-child(2) {
+    transform: translate3d(-3.5em,-6.3em,0);
+  }
+  
+  .circular-menu.active .menu-item:nth-child(3) {
+    transform: translate3d(-6.5em,-3.2em,0);
+  }
+  
+  .circular-menu.active .menu-item:nth-child(4) {
+    transform: translate3d(-7em,1em,0);
+  }
+  
+  /**
+   * The other theme for this menu
+   */
+  
+  .circular-menu.circular-menu-left {
+    right: auto; 
+    left: 1em;
+  }
+  
+  .circular-menu.circular-menu-left .floating-btn {
+    background-color: hsl(217, 89%, 61%);
+  }
+  
+  .circular-menu.circular-menu-left:after {
+    background-color: hsl(217, 89%, 61%);
+  }
+  
+  .circular-menu.circular-menu-left.active .floating-btn i {
+    transform: rotate(90deg);
+  }
+  
+  .circular-menu.circular-menu-left.active .menu-item:nth-child(1) {
+    transform: translate3d(-1em,-7em,0);
+  }
+  
+  .circular-menu.circular-menu-left.active .menu-item:nth-child(2) {
+    transform: translate3d(3.5em,-6.3em,0);
+  }
+  
+  .circular-menu.circular-menu-left.active .menu-item:nth-child(3) {
+    transform: translate3d(6.5em,-3.2em,0);
+  }
+  
+  .circular-menu.circular-menu-left.active .menu-item:nth-child(4) {
+    transform: translate3d(7em,1em,0);
+  }
+</style>
+
+
+
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo"> <i class="fas fa-train"></i> E-METRO BOOKING </a>
+
+    <nav class="navbar">
+        <a href="mainhome.html" class="active">HOME</a>
+        <a href="trainpass.html">E-PASS</a>
+        <a href="trainsubscription.html">SUBSCRIPTION</a>
+        <a href="reserved.php">GENERAL</a>
+        <a href="#contact">CONTACT US</a>
+       
+    </nav>
+
+    <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <div id="search-btn" class="fas fa-search"></div>
+        <a href="mainhome.html" class="fas fa-user">
+        <div id="search-btn" class="fas fa-bell"></div>
+        </a>
+        
+    </div>
+
+    <form action="" class="search-form">
+        <input type="search" placeholder="search here..." id="input-box">
+        <label for="input-box" class="fas fa-search"></label>
+    </form>
+    <div id="circularMenu" class="circular-menu">
+
+        <a class="floating-btn" onclick="document.getElementById('circularMenu').classList.toggle('active');">
+          <i class="fa fa-plus"></i>
+        </a>
+        
+        <menu class="items-wrapper">
+          <a href="#" class="menu-item fa fa-facebook"></a>
+          <a href="#" class="menu-item fa fa-twitter"></a>
+          <a href="#" class="menu-item fa fa-google-plus"></a>
+          <a href="#" class="menu-item fa fa-linkedin"></a>
+        </menu>
+        
+        </div>
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="swiper home-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box" style="background: url(images/train.jpg);">
+                <div class="content">
+                    <h3>Summer</h3>
+                    <p>Special Discount</p>
+                    <div class="button">
+                        <a href="trainpass.html" class="btn">VIEW NOW</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide box" style="background: url(images/train.jpg);">
+                <div class="content">
+                    <h3>Upto 20% off</h3>
+                    <p>For all students</p>
+                    <div class="button">
+                        <a href="trainpass.html" class="btn">BUY NOW</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide box" style="background: url(images/train.jpg);">
+                <div class="content">
+                    <h3>Upto 10% off</h3>
+                    <p>For all Tourists</p>
+                    <div class="button">
+                        <a href="trainpass.html" class="btn">BUY NOW</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide box" style="background: url(images/train.jpg);">
+                <div class="content">
+                    <h3>Limited Offer</h3>
+                    <p>Don't miss it</p>
+                    <div class="button">
+                        <a href="trainpass.html" class="btn">BUY NOW</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+    </div>
+</section>
+
+
+<!-- steps section starts  -->
+
+<section class="steps">
+
+    <div class="heading">
+        <span>How to get started</span>
+        <h1> 3 simple steps</h1>
+    </div>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="images/step-1.svg" alt="">
+            <h3>LOGIN</h3>
+            
+            <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+            <img src="images/step-2.svg" alt="">
+            <h3>CHOOSE TICKET</h3>
+            
+            <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+            <img src="images/step-3.svg" alt="">
+            <h3>MAKE PAYMENT</h3>
+            <a href="#" class="btn">read more</a>
+        </div>
+
+    </div>
+    
+</section>
+
+<!-- steps section ends -->
+
+
+
+
+
+<!-- faq section starts  -->
+
+<section class="faq" id="faq">
+
+    <div class="heading">
+        <span>FAQ</span>
+        <h1>questions & answers</h1>
+    </div>
+
+    <div class="accordion-container">
+
+        <div class="accordion">
+            <div class="accordion-heading">
+                <h3>how to contact support team?</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                By chat option if it it emergency or else throw help page where you get replies to you questions through the mail you have entered within 1hour.
+            </p>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-heading">
+                <h3>Do we need to add bank account?</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                Its not compulsory too add your bank account deatils you can make UPI payments also.
+            </p>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-heading">
+                <h3>how long does it take to refund money?</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                Within 7 working days its will be refunded. We make sure it reaches you at the earliest 
+            </p>
+        </div>  
+
+        <div class="accordion">
+            <div class="accordion-heading">
+                <h3>How does this discount offer help me?</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                If you try to apply or renew in that available period of time you can available some decrease in the actual cost based on your age and option you choose.
+            </p>
+        </div>  
+
+        <div class="accordion">
+            <div class="accordion-heading">
+                <h3>Do I need to learn any special skills to book a ticket?</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                If your are new and not sure how to book a ticket follow our social media accounts and go through the process of booking which is available in video format.
+            </p>
+        </div>  
+
+        <div class="accordion">
+            <div class="accordion-heading">
+                <h3>How do I manage my account?</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                once you login in to the account even if the website is closed or deleted from history it keeps you logged in untill and unless you yourself logout. We suggest you to logout once your work is done so that others many not use it when you are there.
+            </p>
+        </div>  
+
+    </div>
+
+</section>
+
+<!-- faq section ends -->
+
+<section class="newsletter">
+    <div class="content">
+        <h3><span class="line-down"></span> GET STARTED</h3>
+        <p>This is a website which is made according to user choice. having doubts feel free to contact us.</p>
+        <form action="">
+            <input type="email" name="" placeholder="enter your email" id="" class="email">
+            <input type="submit" value="Send" class="btn">
+        </form>
+        
+    </div>
+</section>
+
+
+<!-- contact section starts  -->
+
+<section class="contact" id="contact">
+
+    <h1 class="heading"> <span>contact</span> us </h1>
+
+    <div class="row">
+
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30153.788252261566!2d72.82321484621745!3d19.141690214227783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63aceef0c69%3A0x2aa80cf2287dfa3b!2sJogeshwari%20West%2C%20Mumbai%2C%20Maharashtra%20400047!5e0!3m2!1sen!2sin!4v1632569975602!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+
+        <form action="">
+            <h3 data-aos="zoom-in">tell us something!</h3>
+            <input data-aos="zoom-in" type="text" placeholder="your name" class="box">
+            <input data-aos="zoom-in" type="email" placeholder="your email" class="box">
+            <input data-aos="zoom-in" type="text" placeholder="your number" class="box">
+            <textarea data-aos="zoom-in" placeholder="your message" class="box" cols="30" rows="10"></textarea>
+            <input data-aos="zoom-in" type="submit" value="send message" class="btn">
+        </form>
+
+    </div>
+
+</section>
+
+<!-- contact section ends -->
+
+
+
+<!-- footer section starts  -->
+
+<section class="footer" id="footer">
+
+    <div class="box-container">
+
+        <div class="box" data-aos="fade-right">
+            <h3>our branches</h3>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Andhra Pradesh </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Telangana </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Tamilnadu </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Kerala </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Karnataka </a>
+        </div>
+
+        <div class="box" data-aos="fade-down">
+            <h3>quick links</h3>
+            <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> services </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> help </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> history </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> suggestions </a>
+            
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <h3>contact us</h3>
+            <a href="#"> <i class="fas fa-phone"></i> +91 8688428100 </a>
+            <a href="#"> <i class="fas fa-phone"></i> 0863-456789</a>
+            <a href="#"> <i class="fas fa-envelope"></i> karthikeya12@gmail.com </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Guntur, india - 522005 </a>
+        </div>
+
+        <div class="box" data-aos="fade-left">
+            <h3>contact us</h3>
+            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+            <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+            <a href="#">  <i class="fa fa-whatsapp"></i> Whatsapp</a>
+        </div>
+
+    </div>
+
+    <div class="credit"> created by <span>Karthikeya Grandhi</span> | all rights reserved </div>
+
+</section>
+
+<!-- footer section ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file links  -->
+<script src="js/trainindex.js"></script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+      delay:400,
+      duration:800
+  });
+
+  let slides = document.querySelectorAll('.reviews .slide-container .slide');
+let index = 0;
+
+function next(){
+    slides[index].classList.remove('active');
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
+}
+
+function prev(){
+    slides[index].classList.remove('active');
+    index = (index - 1 + slides.length) % slides.length;
+    slides[index].classList.add('active');
+}
+
+document.querySelectorAll('.faq .accordion-container .accordion').forEach(accordion =>{
+    accordion.onclick = () =>{
+        accordion.classList.toggle('active');
+    }
+})
+
+</script>
+
+</body>
+</html>

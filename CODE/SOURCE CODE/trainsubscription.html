@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Responsive Website Design Tutorial</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/trainsub.css">
+
+</head>
+<body>
+
+<!-- pricing section starts  -->
+
+<section class="pricing" id="pricing">
+
+    <div class="heading">
+        <span>choose your plan</span>
+        <h1>we've got your covered</h1>
+    </div>
+
+    <div class="price-toggler">
+        <span class="month active">monthly</span>
+        <span class="year">yearly</span>
+    </div>
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>BASIC</h3>
+            <div class="price">
+                <div class="month">free</div>
+                <div class="year"><span><i class="fas fa-rupee-sign"></i></span>99.<span>99</span></div>
+            </div>
+            <div class="list">
+                <p> <i class="fas fa-check"></i> 1 person </p>
+                <p> <i class="fas fa-check"></i> No Internet </p>
+                <p> <i class="fas fa-check"></i> Common newspaper <i class="fa fa-newspaper-o" aria-hidden="true"></i> </p>
+                <p> <i class="fas fa-check"></i> maintenance </p>
+                <p> <i class="fas fa-check"></i> 24/7 support </p>
+            </div>
+            <a href="home.html" class="btn">PAYMENT</a>
+        </div>
+
+        <div class="box">
+            <h3>REGULAR</h3>
+            <div class="price">
+                <div class="month"><span><i class="fas fa-rupee-sign"></i></span>99.<span>99</span></div>
+                <div class="year"><span><i class="fas fa-rupee-sign"></i></span>199.<span>99</span></div>
+            </div>
+            <div class="list">
+                <p> <i class="fas fa-check"></i> 2 person </p>
+                <p> <i class="fas fa-check"></i> Free 5GB Internet </p>
+                <p> <i class="fas fa-check"></i> Multiple newspapers </p>
+                <p> <i class="fas fa-check"></i> maintenance </p>
+                <p> <i class="fas fa-check"></i> 24/7 support </p>
+            </div>
+            <a href="home.html" class="btn">PAYMENT</a>
+        </div>
+
+        <div class="box">
+            <h3>PREMIUM</h3>
+            <div class="price">
+                <div class="month"><span><i class="fas fa-rupee-sign"></i></span>199.<span>99</span></div>
+                <div class="year"><span><i class="fas fa-rupee-sign"></i></span>399.<span>99</span></div>
+            </div>
+            <div class="list">
+                <p> <i class="fas fa-check"></i> 3 person </p>
+                <p> <i class="fas fa-check"></i> Unlimited Internet </p>
+                <p> <i class="fas fa-check"></i> Multiple newspapers </p>
+                <p> <i class="fas fa-check"></i> maintenance </p>
+                <p> <i class="fas fa-check"></i> 24/7 support </p>
+            </div>
+            <a href="home.html" class="btn">PAYMENT</a>
+        </div>
+
+    </div>
+    
+</section>
+
+<!-- pricing section ends -->
+
+<!-- custom js file link  -->
+<script>
+let year = document.querySelector('.pricing .price-toggler .year');
+let month = document.querySelector('.pricing .price-toggler .month');
+let yearAmount = document.querySelectorAll('.pricing .price .year');
+let monthAmount = document.querySelectorAll('.pricing .price .month');
+
+year.onclick = () =>{
+    year.classList.add('active');
+    month.classList.remove('active');
+    yearAmount.forEach(years => {
+        years.style.display = 'block';
+    });
+    monthAmount.forEach(months => {
+        months.style.display = 'none';
+    });
+};
+
+month.onclick = () =>{
+    year.classList.remove('active');
+    month.classList.add('active');
+    yearAmount.forEach(years => {
+        years.style.display = 'none';
+    });
+    monthAmount.forEach(months => {
+        months.style.display = 'block';
+    });
+};
+</script>
+
+    
+</body>
+</html>

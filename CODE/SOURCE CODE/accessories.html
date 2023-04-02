@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>Bike Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bike.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  <!--  animejs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  </script>
+  <!--  animejs -->
+  <!--  owl css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+  <!--  owl css -->
+
+  <!--  jquery -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <!--  jquery -->
+
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="container flex1">
+      <div class="logo">
+        <img src="image/logo.png" alt="">
+      </div>
+      <div class="menu">
+        <div class="main_list" id="mainListDiv">
+          <ul>
+            <li> <a href="carindex.html">Home</a> </li>
+           
+            <li> <a href="home.html">Book</a> </li>
+          </ul>
+        </div>
+      </div>
+      <div class="media_button">
+        <i class="fas fa-bars" id="mediaButton"></i>
+      </div>
+
+     
+    </div>
+  </nav>
+  <script type="text/javascript">
+    var mainListDiv = document.getElementById("mainListDiv");
+    mediaButton = document.getElementById('mediaButton');
+
+    mediaButton.onclick = function() {
+      mainListDiv.classList.toggle('show_list');
+      mediaButton.classList.toggle('active');
+    }
+  </script>
+
+  
+<div class="scontainer">
+    <div class="heading">
+      <h1>Choose Assesories</h1>
+      <div class="lines flex1">
+        <div class="line"> <i class="fas fa-circle"></i> </div>
+        <button>25% OFF</button>
+        <div class="line line2"> <i class="fas fa-circle"></i> </div>
+      </div>
+    </div>
+  
+
+
+  
+  <section class="latest Assesories top">
+   
+      <div class="content grid top">
+        <div class="box">
+          <div class="img">
+            <img src="image/a1.png" alt="">
+            <div class="flex1">
+              <label>50%</label>
+              <i class="fas fa-heart"></i>
+            </div>
+          </div>
+
+          <div class="detalis">
+            <h3>Aerion Carrbo Helmet</h3>
+            
+            <h2>$699 <span>$799</span> </h2>
+            <button>Buy Now</button>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="image/a2.png" alt="">
+            <div class="flex1">
+              <label>50%</label>
+              <i class="fas fa-heart"></i>
+            </div>
+          </div>
+
+          <div class="detalis">
+            <h3>Riding Gloves</h3>
+            
+            <h2>$799 <span>$999</span> </h2>
+            <button>Buy Now</button>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="image/a3.png" alt="">
+            <div class="flex1">
+              <label>50%</label>
+              <i class="fas fa-heart"></i>
+            </div>
+          </div>
+
+          <div class="detalis">
+            <h3>Riding suite</h3>
+            
+            <h2>$999 <span>$1999</span> </h2>
+            <button>Buy Now</button>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="image/a4.png" alt="">
+            <div class="flex1">
+              <label>50%</label>
+              <i class="fas fa-heart"></i>
+            </div>
+          </div>
+
+          <div class="detalis">
+            <h3>Riding Shoes</h3>
+           
+            <h2>$799 <span>$999</span> </h2>
+            <button>Buy Now</button>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="image/a5.png" alt="">
+            <div class="flex1">
+              <label>50%</label>
+              <i class="fas fa-heart"></i>
+            </div>
+          </div>
+
+          <div class="detalis">
+            <h3>Riding Jacket</h3>
+            
+            <h2>$599 <span>$1299</span> </h2>
+            <button>Buy Now</button>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="image/a6.png" alt="">
+            <div class="flex1">
+              <label>50%</label>
+              <i class="fas fa-heart"></i>
+            </div>
+          </div>
+
+          <div class="detalis">
+            <h3>shoes</h3>
+            
+            <h2>$499 <span>$999</span> </h2>
+            <button>Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  
+
+  <script>
+    anime({
+      targets: '.ani_image',
+      translateX: 70,
+      loop: true,
+      direction: 'alternate',
+      easing: 'easeInOutSine'
+    });
+  </script>
+</body>
+
+</html>

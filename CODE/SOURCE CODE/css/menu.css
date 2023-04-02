@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;900&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all .2s linear;
+}
+
+body,
+html{
+  overflow-x: hidden;
+}
+
+#nav-toggler{
+  -webkit-appearance: none;
+  color:rgb(68, 165, 97);
+  position: absolute;
+  top:20px; right:30px;
+  cursor: pointer;
+  z-index: 1010;
+  font-size: 3rem;
+}
+
+#nav-toggler:checked{
+  transform: rotate(180deg);
+}
+
+#nav-toggler:checked::before{
+  content: '\f00d';
+  color:rgb(68, 165, 97);
+  transition: .2s linear .2s;
+}
+
+#nav-toggler:checked ~ .navbar{
+  left:0;
+}
+
+.navbar{
+  position: fixed;
+  top:0; left:-110%;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-flow: column;
+  padding:0 10%;
+}
+
+.navbar a{
+  font-size: 4em;
+  color:transparent;
+  -webkit-text-stroke: .5px rgba(255, 254, 254, 0.959);
+  font-weight: bolder;
+  position: relative;
+  letter-spacing: 3px;
+}
+
+.navbar a::before{
+  content: attr(data-text);
+  position: absolute;
+  top:0; left:0;
+  color:rgba(255, 255, 255, 0.9);
+  transition: .3s linear;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+
+.navbar a:hover::before{
+  clip-path: polygon(0 0, 100% 0, 99% 100%, 0 100%);
+}
+
+.background-image{
+  position: absolute;
+  top:0; left:0;
+  height: 100%;
+  width: 100%;
+  background: url(../images/tourism.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.navbar a:hover:nth-child(2) ~ .background-image{
+  background: url(../images/nav-img-2.jpeg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar a:hover:nth-child(3) ~ .background-image{
+  background: url(../images/food.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar a:hover:nth-child(4) ~ .background-image{
+  background: url(../images/trans.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar a:hover:nth-child(5) ~ .background-image{
+  background: url(../images/hotel.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar a:hover:nth-child(6) ~ .background-image{
+  background: url(../images/car.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width:768px){
+  .navbar a{
+    font-size: 3em;
+  }
+}
+
+@media (max-width:450px){
+  .navbar a{
+    font-size: 2em;
+  }
+}
